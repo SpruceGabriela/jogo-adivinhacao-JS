@@ -6,6 +6,8 @@ se não
 a cada erro, o usuário perde 1 vida, ele tem 10 vidas*/
 
 let numeroSorteado = 0;
+let tentativas = 10;
+let i = 0;
 
 
 function rodarJogo(){
@@ -25,6 +27,8 @@ function rodarJogo(){
         }
         rodarJogo();
     }
+    while(tentativas>0){
+        
 }
 
 
