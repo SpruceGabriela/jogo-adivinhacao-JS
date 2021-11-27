@@ -6,16 +6,22 @@ se não
 a cada erro, o usuário perde 1 vida, ele tem 10 vidas*/
 
 let numeroSorteado = 0;
+let stopProgram = "stop program";
 let tentativas = 10;
 
 
 function rodarJogo() {
     while (tentativas>0) {
-        let palpite = Number(prompt('Adivinhe o número sorteado entre 0 e 50.'));
+        let palpite = (prompt('Adivinhe o número sorteado entre 0 e 50.'));
 
         if (palpite === numeroSorteado) {
             alert('parabens, você ganhou o jogo');
             tentativas = 0; //não perde nenhuma vida
+
+        } else if (palpite === stopProgram) {
+          document.querySelector('.close-mouseover').removeAttribute('onmouseover');
+          break;
+
         }
         else {
             if (palpite > numeroSorteado) {
@@ -31,8 +37,11 @@ function rodarJogo() {
 }
 
 function iniciarJogo() {
-    numeroSorteado = aleatorio(0, 50);
+    numeroSorteado = aleatorio(0, 2);
     rodarJogo();
 }
 
-iniciarJogo();
+// A função é assim pois mensagem é clara kkk :)
+function mouseOn() {
+  iniciarJogo();
+};
